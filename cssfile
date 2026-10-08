@@ -1,0 +1,114 @@
+:root {
+  --bg: #f1f4f0;
+  --surface: #ffffff;
+  --ink: #12261f;
+  --muted: #5d6f67;
+  --accent: #1f6f50;
+  --line: #d9e0db;
+  --out: #a8362b;
+  --in: #1f6f50;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5vw;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+
+nav a {
+  margin-left: 1.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a.active { color: var(--ink); }
+nav a.active { font-weight: 600; }
+
+main { max-width: 760px; margin: 0 auto; padding: 3rem 1.25rem; }
+
+.balance-panel {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.label { font-size: 1.1rem; opacity: 0.85; }
+
+.balance {
+  font-size: clamp(3.5rem, 14vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0.5rem 0;
+}
+.currency { font-weight: 400; margin-right: 0.15em; opacity: 0.8; }
+
+.meta { opacity: 0.8; font-size: 0.95rem; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.btn {
+  flex: 1 1 150px;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.recent h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+
+.recent ul {
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.recent li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+.recent li:last-child { border-bottom: none; }
+.out { color: var(--out); }
+.in { color: var(--in); }
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  nav a { margin-left: 0.9rem; font-size: 0.85rem; }
+  .balance-panel { padding: 2rem 1rem; }
+}
