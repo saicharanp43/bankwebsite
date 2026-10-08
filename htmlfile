@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sai Bank – Account Overview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="logo">Sai Bank</span>
+    <nav>
+      <a href="index.html" class="active">Account</a>
+      <a href="#">Transfer</a>
+      <a href="#">Statements</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="balance-panel">
+      <p class="label">Available balance</p>
+      <h1 class="balance"><span class="currency">₹</span><span id="balance">12,450.75</span></h1>
+      <p class="meta">Savings account &bull; ending 4821</p>
+    </section>
+
+    <section class="actions">
+      <a href="#" class="btn primary">Send money</a>
+      <a href="#" class="btn">Add money</a>
+      <a href="#" class="btn">View statement</a>
+    </section>
+
+    <section class="recent">
+      <h2>Recent activity</h2>
+      <ul>
+        <li><span>Grocery store</span><span class="out">− ₹1,240.00</span></li>
+        <li><span>Salary credit</span><span class="in">+ ₹45,000.00</span></li>
+        <li><span>Electricity bill</span><span class="out">− ₹2,310.50</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>This is a demo page. No real banking data.</p>
+  </footer>
+
+  <script>
+    // Reads the balance from balance.txt. If the file can't be loaded
+    // (for example when opening index.html directly), the value in the HTML stays.
+    fetch("balance.txt")
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (t) { if (t.trim()) document.getElementById("balance").textContent = t.trim(); })
+      .catch(function () {});
+  </script>
+</body>
+</html>
